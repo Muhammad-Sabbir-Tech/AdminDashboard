@@ -1,0 +1,17 @@
+@import "styles.css";
+
+/*side bar styling*/
+.toggleBtn {
+    box-shadow: none !important;
+    position: absolute;
+    right: -60px;
+    top: 14px;
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    /*toggle btn styling*/
+    .toggleBtn {
+        right: -30px;
+    }
+}
