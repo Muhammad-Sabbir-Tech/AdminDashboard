@@ -2,13 +2,20 @@ import React from 'react';
 import SideBarAndContentWrapper from "../Wrapper/SideBarAndContentWrapper";
 
 function SideBar(props) {
+    
+     const sideBarToggleOnClick = (event) => {
+        event.preventDefault();
+        document.body.classList.toggle('sb-sidenav-toggled');
+        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+    }
+     
     return (
         <>
             <div id="layoutSidenav_nav">
                 <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div className="sb-sidenav-menu">
                         <div className="nav">
-                            <button className="toggleBtn btn btn-link btn-sm me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                            <button className="toggleBtn btn btn-link btn-sm me-4 me-lg-0" onClick={event=>sideBarToggleOnClick(event)}><i
                                 className="fas fa-bars"/></button>
                             <div className="sb-sidenav-menu-heading">Core</div>
                             <a className="nav-link" href="index.html">
